@@ -1,0 +1,30 @@
+name: "👀 Preview"
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  actions: write
+  id-token: write
+  contents: write
+  issues: write
+  pull-requests: write
+
+env:
+  node-version: "16.x"
+  CI: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy_sb_preview:
+    name: "📕 Deploy Storybook Preview"
+    runs-on: ubuntu-latest
+    # env:
+    #   NODE_OPTIONS: --max-old-space-size=6144
+    #   && github.event.issue.pull_request && contains(github.event.comment.body, '/preview')
+    steps:
+      - run: echo hello-world
