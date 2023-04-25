@@ -1,1 +1,1 @@
-# gh-action
+# gh-actions
